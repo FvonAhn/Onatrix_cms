@@ -1,18 +1,27 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
 @{
-	Layout = null;
-}
-<h1>@Model.HeroTitle</h1>
-
-<div>@Model.HeroText</div>
-
-@if (Model.HeroLink != null) 
-{
-	<a href="@Model.HeroLink.Url">@Model.HeroLink.Name</a>
+	Layout = "mainLayout.cshtml";
 }
 
-@if (Model.HeroBgImg != null) 
-{
-	<img src="@Model.HeroBgImg.Url()"/>
-}
+<section class="relative py-[5rem]">
+	<div class="absolute inset-0">
+		@if (Model.HeroBgImg != null) 
+		{
+			<img src="@Model.HeroBgImg.Url()" class="w-full object-cover" />
+		}
+	</div>
+
+	<div class="container mx-auto px-4 relative z-10">
+		<div class="w-5/12 flex flex-col gap-8">
+			<h1 class="text-[70px] font-bold leading-none">@Model.HeroTitle</h1>
+			<div>@Model.HeroText</div>
+			@if (Model.HeroLink != null) 
+			{
+
+				<a class="bg-[#4f5955] text-white py-3 px-10 no-underline rounded cursor-pointer self-start font-bold" href="@Model.HeroLink.Url">@Model.HeroLink.Name</a>
+
+			}	
+		</div>
+	</div>
+</section>
