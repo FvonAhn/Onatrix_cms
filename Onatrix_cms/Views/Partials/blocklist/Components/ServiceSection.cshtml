@@ -1,12 +1,23 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ServiceSettings;
 
-<section class="py-[4rem] bg-[var(--clr-white_200)]">
+    var sectionColor = settings?.ServiceBgColor?.Color ?? "#ffffff";
+}
+
+<section class="py-[4rem] bg-[@sectionColor]">
 
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col gap-2 items-center">
-            <h2 class="text-[.875rem] text-[#F2EDDC] font-bold uppercase">@Model.ServiceLabel</h2>
-            <div class="rte">@Html.Raw(Model.ServiceTitle)</div>
+            
+            @if (settings!.ShowServiceLabel)
+            {
+                <h2 class="text-[.875rem] text-[#F2EDDC] font-bold uppercase">@content.ServiceLabel</h2>
+            }
+
+            <div class="rte">@Html.Raw(content.ServiceTitle)</div>
         </div>
 
         <div class="mt-5 grid grid-cols-3 gap-4">
