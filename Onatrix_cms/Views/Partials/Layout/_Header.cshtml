@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var logo = siteSettings?.SiteLogo;
+}
+
+<header class="relative shadow-sm z-[999]">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between p-4">
+
+        @if (logo != null)
+        {
+            <a href="/" class="flex-shrink-0">
+                <img src="@logo.Url()" alt="Onatrix" />
+            </a>
+        }
+        else
+        {
+            <a href="/" class="flex-shrink-0">
+                Onatrix
+            </a>
+        }
+
+        <ul class="flex items-center gap-16">
+            <li>
+                <a href="/about" class="font-bold text-main hover:text-sub-100 transition-colors">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="services" class="font-bold text-main hover:text-sub-100 transition-color">
+                    Services
+                </a>
+            </li>
+            <li>
+                <a href="/projects" class="font-bold text-main hover:text-sub-100 transition-color">
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a href="/contact" class="font-bold text-main hover:text-sub-100 transition-color">
+                    Contact
+                </a>
+            </li>
+        </ul>
+
+        <div class="flex items-center">
+            <i class="fa-solid fa-magnifying-glass text-lg text-main"></i>
+        </div>
+    </nav>
+</header>
