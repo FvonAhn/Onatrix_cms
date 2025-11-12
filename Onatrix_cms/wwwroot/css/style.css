@@ -10,12 +10,12 @@
     --font-black: 900;
 
     --clr-main: #4F5955;
-    --clr-white_100: #FFFFFF;
-    --clr-white_200: #EAEAEA;
-    --clr-white_300: #F7F7F7;
+    --clr-white-100: #FFFFFF;
+    --clr-white-200: #EAEAEA;
+    --clr-white-300: #F7F7F7;
 
-    --clr-sub_100: #F2EDDC;
-    --clr-sub_300: #D9C3A9;
+    --clr-sub-100: #F2EDDC;
+    --clr-sub-300: #D9C3A9;
 }
 
 body {

@@ -4,7 +4,7 @@
     var content = (ContentModels.TeamMember)Model.Content;
 }
 
-<div class="flex flex-col h-full border border-[var(--clr-white_200)]">
+<div class="flex-col h-full border border-white-200">
     @if (content.TeamMemberImage != null)
     {
         <img src="@content.TeamMemberImage.Url()" alt="@content.TeamMemberName" class="w-full object-cover" />
@@ -12,6 +12,6 @@
 
     <div class="p-4">
         <h4 class="font-semibold">@content.TeamMemberName</h4>
-        <p class="text-sm tex-gray-600">@content.TeamMemberRoll</p>
+        <p class="text-sm text-note">@content.TeamMemberRoll</p>
     </div>
 </div>
