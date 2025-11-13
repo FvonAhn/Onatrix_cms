@@ -21,7 +21,11 @@ body {
 }
 
 .rte h3 {
-    @apply text-[2.5rem] font-bold text-main;
+    @apply text-[2.5rem] font-extrabold text-main;
+}
+
+.rte p {
+    @apply text-[1.5rem] font-bold text-main;
 }
 
 .current a {
