@@ -23,3 +23,6 @@ body {
     @apply text-[2.5rem] font-bold text-main;
 }
 
+.current a {
+     @apply text-sub-300;
+}

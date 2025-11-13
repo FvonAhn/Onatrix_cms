@@ -31,7 +31,6 @@
     --color-white-200: #EAEAEA;
     --color-sub-100: #F2EDDC;
     --color-sub-300: #D9C3A9;
-    --color-pink: #FF00DC;
   }
 }
 @layer base {
@@ -447,6 +446,9 @@ body {
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
   color: var(--color-main);
+}
+.current a {
+  color: var(--color-sub-300);
 }
 @property --tw-rotate-x {
   syntax: "*";
