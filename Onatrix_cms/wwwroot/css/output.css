@@ -31,6 +31,7 @@
     --color-white-200: #EAEAEA;
     --color-sub-100: #F2EDDC;
     --color-sub-300: #D9C3A9;
+    --color-footer: #0E0E0E;
   }
 }
 @layer base {
@@ -317,6 +318,9 @@
   .bg-\[\@sectionColor\] {
     background-color: @sectionColor;
   }
+  .bg-footer {
+    background-color: var(--color-footer);
+  }
   .bg-main {
     background-color: var(--color-main);
   }
@@ -328,6 +332,9 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
@@ -359,8 +366,17 @@
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
+  }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
+  }
+  .pl-1 {
+    padding-left: calc(var(--spacing) * 1);
+  }
+  .pl-2 {
+    padding-left: calc(var(--spacing) * 2);
   }
   .text-base {
     font-size: var(--text-base);

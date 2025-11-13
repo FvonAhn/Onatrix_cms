@@ -2,12 +2,6 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 
-
-
-
-
-
-
     Layout = null;
 
     var rootContent = Umbraco.ContentAtRoot();
@@ -33,6 +27,6 @@
     <partial name="Partials/Layout/_TopBar" />
     <partial name="Partials/Layout/_Header" />
     @RenderBody()
-    
+    <partial name="Partials/Layout/_Footer" />
 </body>
 </html>
