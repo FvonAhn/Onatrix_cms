@@ -18,10 +18,12 @@
     --text-base--line-height: calc(1.5 / 1);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
+    --radius-md: 0.375rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -185,6 +187,20 @@
   }
 }
 @layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+  }
   .absolute {
     position: absolute;
   }
@@ -197,6 +213,12 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .inset-y-0 {
+    inset-block: calc(var(--spacing) * 0);
+  }
+  .right-3 {
+    right: calc(var(--spacing) * 3);
+  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
@@ -205,6 +227,9 @@
   }
   .z-10 {
     z-index: 10;
+  }
+  .z-\[99\] {
+    z-index: 99;
   }
   .z-\[999\] {
     z-index: 999;
@@ -233,6 +258,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .-mt-\[11rem\] {
+    margin-top: calc(11rem * -1);
+  }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
@@ -245,8 +273,17 @@
   .grid {
     display: grid;
   }
+  .hidden {
+    display: none;
+  }
   .inline-block {
     display: inline-block;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-\[76px\] {
+    height: 76px;
   }
   .h-\[220px\] {
     height: 220px;
@@ -266,11 +303,23 @@
   .w-3\/12 {
     width: calc(3/12 * 100%);
   }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-5\/12 {
+    width: calc(5/12 * 100%);
+  }
   .w-6\/12 {
     width: calc(6/12 * 100%);
   }
+  .w-7\/12 {
+    width: calc(7/12 * 100%);
+  }
   .w-8\/12 {
     width: calc(8/12 * 100%);
+  }
+  .w-\[161px\] {
+    width: 161px;
   }
   .w-full {
     width: 100%;
@@ -289,6 +338,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .appearance-none {
+    appearance: none;
   }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -326,8 +378,14 @@
   .gap-5 {
     gap: calc(var(--spacing) * 5);
   }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
   }
   .gap-16 {
     gap: calc(var(--spacing) * 16);
@@ -377,9 +435,6 @@
   .bg-main {
     background-color: var(--color-main);
   }
-  .bg-note {
-    background-color: var(--color-note);
-  }
   .bg-white-100 {
     background-color: var(--color-white-100);
   }
@@ -416,11 +471,20 @@
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
   }
+  .px-\[2rem\] {
+    padding-inline: 2rem;
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
+  }
+  .py-28 {
+    padding-block: calc(var(--spacing) * 28);
+  }
+  .py-\[1\.5rem\] {
+    padding-block: 1.5rem;
   }
   .py-\[4rem\] {
     padding-block: 4rem;
@@ -437,8 +501,17 @@
   .pt-\[4rem\] {
     padding-top: 4rem;
   }
+  .pr-10 {
+    padding-right: calc(var(--spacing) * 10);
+  }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
+  }
+  .pb-10 {
+    padding-bottom: calc(var(--spacing) * 10);
+  }
+  .pb-\[2\.5rem\] {
+    padding-bottom: 2.5rem;
   }
   .pl-1 {
     padding-left: calc(var(--spacing) * 1);
@@ -471,6 +544,9 @@
   .text-\[1\.375rem\] {
     font-size: 1.375rem;
   }
+  .text-\[1\.875rem\] {
+    font-size: 1.875rem;
+  }
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
@@ -489,6 +565,10 @@
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
   }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
@@ -503,6 +583,9 @@
   .text-note {
     color: var(--color-note);
   }
+  .text-sub-100 {
+    color: var(--color-sub-100);
+  }
   .text-sub-300 {
     color: var(--color-sub-300);
   }
@@ -512,12 +595,22 @@
   .uppercase {
     text-transform: uppercase;
   }
+  .italic {
+    font-style: italic;
+  }
   .no-underline {
     text-decoration-line: none;
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-main {
+    --tw-ring-color: var(--color-main);
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
@@ -544,6 +637,38 @@
       }
     }
   }
+  .focus\:ring-2 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:ring-main {
+    &:focus {
+      --tw-ring-color: var(--color-main);
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+}
+.form-btn {
+  width: 100%;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  background-color: var(--color-sub-100);
+  padding-inline: calc(var(--spacing) * 12);
+  padding-block: calc(var(--spacing) * 3);
+  text-align: center;
+  font-size: 1.125rem;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-main);
+  -webkit-user-select: none;
+  user-select: none;
 }
 body {
   font-family: var(--font-standard);

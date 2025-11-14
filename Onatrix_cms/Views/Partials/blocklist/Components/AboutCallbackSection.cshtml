@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Onatrix_cms.ViewModels
+@{
+    var content = (ContentModels.AboutCallbackSection)Model.Content;
+    var settings = Model.Settings as ContentModels.AboutCallbackSettings;
+}
+
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-4 flex gap-10">
+
+        <div class="flex flex-col w-7/12">
+            <p class="text-sub-300 text-normal font-bold uppercase">About us</p>
+            <h2 class="text-main text-[2.5rem] font-extrabold pb-10">We have 40 years of experience</h2>
+            <div class="flex flex-col gap-2">
+                <p class="text-note text-md font-light">“We have over 25 years of experience providing expert financial advice to both businesses and individuals.”</p>
+                <p class="text-note text-sm font-normal">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+                <img src="~/images/SignatureImage.svg" class="h-[76px] w-[161px]" />
+                <p class="text-note text-sm font-normal">Tina Fox - CEO & Founder</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-5/12 shadow-md -mt-[11rem] z-[99]">
+            <div class="bg-main">
+                <p class="text-sub-100 text-[1.875rem] py-[1.5rem] px-[2rem] font-bold">@content.AboutCallbackFormTitle</p>
+            </div>
+            <p class="text-sm py-[1.5rem] px-[2rem] italic">@content.AboutCallbackFormDescription</p>
+            <partial name="Partials/Forms/_CallbackForm" model="new CallbackFormViewModel()" />
+        </div>
+
+    </div>
+</section>
