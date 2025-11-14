@@ -5,6 +5,14 @@
     var settings = Model.Settings as ContentModels.ServiceSettings;
 
     var sectionColor = settings?.ServiceBgColor?.Color ?? "#ffffff";
+
+    var current = Umbraco.AssignedContentItem;
+    var siteRoot = current?.Root();
+
+    var servicePage = siteRoot?.Children<ServicePage>()?.FirstOrDefault();
+    var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+
+
 }
 
 <section class="py-[4rem] bg-[@sectionColor]">
@@ -21,53 +29,22 @@
         </div>
 
         <div class="mt-5 grid grid-cols-3 gap-4">
-            <div class="bg-white-100 border-2 border-gray-100 w-full min-h-[350px] overflow-hidden">
-                <a href="#" class="block no-underline">
-                    <h4 class="p-[1.5rem] font-semibold text-main">Risk Management</h4>
-                    <img src="~/images/ServiceImg.svg" class="block w-full h-[220px] object-cover" />
-                    <p class="text-sm p-[1.5rem]">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
-                </a>
-            </div>
 
-            <div class="bg-white-100 border-2 border-gray-100 w-full min-h-[350px] overflow-hidden">
-                <a href="#" class="block no-underline">
-                    <h4 class="p-[1.5rem] font-semibold text-main">Bonds & Commodities</h4>
-                    <img src="~/images/BondsAndCommoditiesImage.svg" class="block w-full h-[220px] object-cover" />
-                    <p class="text-sm p-[1.5rem]">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
-                </a>
-            </div>
 
-            <div class="bg-white-100 border-2 border-gray-100 w-full min-h-[350px] overflow-hidden">
-                <a href="#" class="block no-underline">
-                    <h4 class="p-[1.5rem] font-semibold text-main">Assurance & Audits</h4>
-                    <img src="~/images/AssuranceAndAuditsImage.svg" class="block w-full h-[220px] object-cover" />
-                    <p class="text-sm p-[1.5rem]">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
-                </a>
-            </div>
+            @if (items.Any())
+            {
+                @foreach (var item in items)
+                {
+                    <div class="bg-white-100 border-2 border-gray-100 w-full min-h-[350px] overflow-hidden">
+                        <a href="@item.Url()" class="block no-underline">
+                            <h4 class="p-[1.5rem] font-semibold text-main">@item.Name</h4>
+                            <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/ServiceImg.svg")" class="block w-full h-[220px] object-cover" />
+                            <p class="text-sm p-[1.5rem]">@item.ServiceDetailExcerpt</p>
+                        </a>
+                    </div>
+                }
+            }
 
-            <div class="bg-white-100 border-2 border-gray-100 w-full min-h-[350px] overflow-hidden">
-                <a href="#" class="block no-underline">
-                    <h4 class="p-[1.5rem] font-semibold text-main">Tax & Trusts</h4>
-                    <img src="~/images/TaxAndTrustsImage.svg" class="block w-full h-[220px] object-cover" />
-                    <p class="text-sm p-[1.5rem]">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
-                </a>
-            </div>
-
-            <div class="bg-white-100 border-2 border-gray-100 w-full min-h-[350px] overflow-hidden">
-                <a href="#" class="block no-underline">
-                    <h4 class="p-[1.5rem] font-semibold text-main">Financial Advisor</h4>
-                    <img src="~/images/FinancialAdvisorImage.svg" class="block w-full h-[220px] object-cover" />
-                    <p class="text-sm p-[1.5rem]">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
-                </a>
-            </div>
-
-            <div class="bg-white-100 border-2 border-gray-100 w-full min-h-[350px] overflow-hidden">
-                <a href="#" class="block no-underline">
-                    <h4 class="p-[1.5rem] font-semibold text-main">Statistic Advisors</h4>
-                    <img src="~/images/StatisticAdvisorsImage.svg" class="block w-full h-[220px] object-cover" />
-                    <p class="text-sm p-[1.5rem]">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>
-                </a>
-            </div>
         </div>
     </div>
 </section>

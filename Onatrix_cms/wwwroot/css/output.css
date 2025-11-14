@@ -18,10 +18,10 @@
     --text-base--line-height: calc(1.5 / 1);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-    --font-weight-black: 900;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -263,11 +263,20 @@
   .w-1\/4 {
     width: calc(1/4 * 100%);
   }
+  .w-3\/12 {
+    width: calc(3/12 * 100%);
+  }
   .w-6\/12 {
     width: calc(6/12 * 100%);
   }
+  .w-8\/12 {
+    width: calc(8/12 * 100%);
+  }
   .w-full {
     width: 100%;
+  }
+  .w-px {
+    width: 1px;
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -286,6 +295,9 @@
   }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -359,8 +371,14 @@
   .bg-footer {
     background-color: var(--color-footer);
   }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
   .bg-main {
     background-color: var(--color-main);
+  }
+  .bg-note {
+    background-color: var(--color-note);
   }
   .bg-white-100 {
     background-color: var(--color-white-100);
@@ -383,20 +401,8 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
-  .p-16 {
-    padding: calc(var(--spacing) * 16);
-  }
-  .p-20 {
-    padding: calc(var(--spacing) * 20);
-  }
   .p-26 {
     padding: calc(var(--spacing) * 26);
-  }
-  .p-28 {
-    padding: calc(var(--spacing) * 28);
-  }
-  .p-30 {
-    padding: calc(var(--spacing) * 30);
   }
   .p-\[1\.5rem\] {
     padding: 1.5rem;
@@ -407,14 +413,8 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
-  .px-5 {
-    padding-inline: calc(var(--spacing) * 5);
-  }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
-  }
-  .px-16 {
-    padding-inline: calc(var(--spacing) * 16);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -465,6 +465,12 @@
   .text-\[\.875rem\] {
     font-size: .875rem;
   }
+  .text-\[0\.875rem\] {
+    font-size: 0.875rem;
+  }
+  .text-\[1\.375rem\] {
+    font-size: 1.375rem;
+  }
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
@@ -482,6 +488,10 @@
   .font-extrabold {
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -532,11 +542,6 @@
       @media (hover: hover) {
         color: var(--color-sub-300);
       }
-    }
-  }
-  .active\:text-sub-300 {
-    &:active {
-      color: var(--color-sub-300);
     }
   }
 }
