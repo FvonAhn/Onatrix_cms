@@ -423,9 +423,6 @@
   .border-white-200 {
     border-color: var(--color-white-200);
   }
-  .bg-\[\@sectionColor\] {
-    background-color: @sectionColor;
-  }
   .bg-footer {
     background-color: var(--color-footer);
   }
