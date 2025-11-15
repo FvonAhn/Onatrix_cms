@@ -4,52 +4,57 @@
     var content = (ContentModels.ContactSection)Model.Content;
     var rootContent = Umbraco.ContentAtRoot();
     var settings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+    var contactSettings = Model.Settings as ContentModels.ContactSettings;
+
+    var bgColor = contactSettings?.ContactBackgroundColor?.Color ?? "#ffffff";
 
     var contactAdress = settings?.ContactAdress ?? "Ingen Adress angiven";
     var contactPhone = settings?.ContactPhone ?? "Ingen Telefonnummer angivet";
     var contactEmail = settings?.ContactEmail ?? "Ingen E-mail angiven";
 }
 
-<section class="max-w-7xl mx-auto flex pt-[4rem]">
-    <div class="relative inline-block">
-        <div class="">
-            @if (content.ContactBgImage != null)
-            {
-                <img src="@content.ContactBgImage.Url()"/>
-            }
-        </div>
-        <div class="absolute bottom-0 left-0">
-            @if (content.ContactImage != null) 
-            {
-                <img src="@content.ContactImage.Url()"/>
-            }
-        </div>
-    </div>
-    <div class="flex flex-col gap-5 p-26">
-        <div class="rte">
-            <h3>@content.ContactTitle</h3>
-        </div>
-        <div class="flex flex-col gap-5">
-            <div class="flex flex-col gap-2">
-                <div class="flex gap-1 items-center font-bold">
-                    <i class="fa-solid fa-location-dot text-sub-300"></i>
-                    <p>Office location</p>
-                </div>
-                <p>@contactAdress</p>
+<section style="background-color:@bgColor">
+    <div class="max-w-7xl mx-auto flex pt-[4rem]">
+        <div class="relative inline-block">
+            <div class="">
+                @if (content.ContactBgImage != null)
+                {
+                    <img src="@content.ContactBgImage.Url()"/>
+                }
             </div>
-            <div class="flex flex-col gap-2">
-                <div class="flex gap-1 items-center font-bold">
-                    <i class="fa-solid fa-phone text-sub-300"></i>
-                    <p>Office Phone</p>
-                </div>
-                <p>@contactPhone</p>
+            <div class="absolute bottom-0 left-0">
+                @if (content.ContactImage != null) 
+                {
+                    <img src="@content.ContactImage.Url()"/>
+                }
             </div>
-            <div class="flex flex-col gap-2">
-                <div class="flex gap-1 items-center font-bold">
-                    <i class="fa-solid fa-envelope text-sub-300"></i>
-                    <p>Office Email</p>
+        </div>
+        <div class="flex flex-col gap-5 p-26">
+            <div class="rte">
+                <h3>@content.ContactTitle</h3>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-2">
+                    <div class="flex gap-1 items-center font-bold">
+                        <i class="fa-solid fa-location-dot text-sub-300"></i>
+                        <p>Office location</p>
+                    </div>
+                    <p>@contactAdress</p>
                 </div>
-                <p>@contactEmail</p>
+                <div class="flex flex-col gap-2">
+                    <div class="flex gap-1 items-center font-bold">
+                        <i class="fa-solid fa-phone text-sub-300"></i>
+                        <p>Office Phone</p>
+                    </div>
+                    <p>@contactPhone</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="flex gap-1 items-center font-bold">
+                        <i class="fa-solid fa-envelope text-sub-300"></i>
+                        <p>Office Email</p>
+                    </div>
+                    <p>@contactEmail</p>
+                </div>
             </div>
         </div>
     </div>
