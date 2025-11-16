@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-gray-100: #EBEBEB;
     --spacing: 0.25rem;
     --container-7xl: 80rem;
@@ -262,14 +261,11 @@
   .-mx-2 {
     margin-inline: calc(var(--spacing) * -2);
   }
-  .mx-6 {
-    margin-inline: calc(var(--spacing) * 6);
-  }
-  .mx-10 {
-    margin-inline: calc(var(--spacing) * 10);
-  }
   .mx-auto {
     margin-inline: auto;
+  }
+  .my-10 {
+    margin-block: calc(var(--spacing) * 10);
   }
   .-mt-\[11rem\] {
     margin-top: calc(11rem * -1);
@@ -283,35 +279,14 @@
   .mt-\[5rem\] {
     margin-top: 5rem;
   }
-  .mt-\[10px\] {
-    margin-top: 10px;
+  .mt-\[20rem\] {
+    margin-top: 20rem;
   }
-  .mt-\[20px\] {
-    margin-top: 20px;
-  }
-  .mt-\[30px\] {
-    margin-top: 30px;
+  .mt-\[40rem\] {
+    margin-top: 40rem;
   }
   .mt-\[90px\] {
     margin-top: 90px;
-  }
-  .mr-\[4rem\] {
-    margin-right: 4rem;
-  }
-  .mr-\[10rem\] {
-    margin-right: 10rem;
-  }
-  .ml-\[3rem\] {
-    margin-left: 3rem;
-  }
-  .ml-\[4rem\] {
-    margin-left: 4rem;
-  }
-  .ml-\[10rem\] {
-    margin-left: 10rem;
-  }
-  .ml-auto {
-    margin-left: auto;
   }
   .block {
     display: block;
@@ -346,11 +321,20 @@
   .h-\[540px\] {
     height: 540px;
   }
+  .h-\[567px\] {
+    height: 567px;
+  }
   .h-\[571px\] {
     height: 571px;
   }
+  .h-\[748px\] {
+    height: 748px;
+  }
   .h-\[838px\] {
     height: 838px;
+  }
+  .h-auto {
+    height: auto;
   }
   .h-full {
     height: 100%;
@@ -391,26 +375,29 @@
   .w-8\/12 {
     width: calc(8/12 * 100%);
   }
+  .w-\[20rem\] {
+    width: 20rem;
+  }
+  .w-\[24rem\] {
+    width: 24rem;
+  }
+  .w-\[28rem\] {
+    width: 28rem;
+  }
+  .w-\[40rem\] {
+    width: 40rem;
+  }
   .w-\[95px\] {
     width: 95px;
   }
   .w-\[161px\] {
     width: 161px;
   }
-  .w-\[200px\] {
-    width: 200px;
-  }
-  .w-\[350px\] {
-    width: 350px;
-  }
   .w-\[370px\] {
     width: 370px;
   }
   .w-\[400px\] {
     width: 400px;
-  }
-  .w-\[500px\] {
-    width: 500px;
   }
   .w-\[550px\] {
     width: 550px;
@@ -429,9 +416,6 @@
   }
   .max-w-\[500px\] {
     max-width: 500px;
-  }
-  .max-w-\[690px\] {
-    max-width: 690px;
   }
   .min-w-\[1174px\] {
     min-width: 1174px;
@@ -506,20 +490,8 @@
   .gap-\[1\.5rem\] {
     gap: 1.5rem;
   }
-  .gap-\[2rem\] {
-    gap: 2rem;
-  }
   .gap-\[3rem\] {
     gap: 3rem;
-  }
-  .gap-\[5px\] {
-    gap: 5px;
-  }
-  .gap-\[10px\] {
-    gap: 10px;
-  }
-  .gap-\[20px\] {
-    gap: 20px;
   }
   .gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
@@ -565,9 +537,6 @@
   }
   .bg-main {
     background-color: var(--color-main);
-  }
-  .bg-sub-100 {
-    background-color: var(--color-sub-100);
   }
   .bg-white-100 {
     background-color: var(--color-white-100);

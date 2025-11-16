@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactFormSection)Model.Content;
+}
+
+<section class="h-[748px] flex flex-col">
+    <div class="relative">
+        @if (content.ContactFormMap != null)
+        {
+            <img src="@content.ContactFormMap.Url()" class="absolute w-full h-auto" />
+        }
+    </div>
+    <div class="relative max-w-7xl mx-auto mt-[20rem] bg-white-100 h-[567px] w-[1170px] flex flex-col items-center justify-center gap-10 shadow-md">
+        <p class="text-[14px] text-sub-300 font-bold">@content.ContactFormTitle</p>
+        <h3 class="text-[40px] text-main font-extrabold">@content.ContactFormLabel</h3>
+        <p class="text-[14px] text-note text-center italic w-[28rem]">@content.ContactFormText</p>
+    </div>
+
+@*     @if (content.HeroLink != null)
+    {
+
+        <a class="bg-main text-sub-100 py-3 px-10 no-underline rounded cursor-pointer self-start font-bold" href="@content.HeroLink.Url">@content.HeroLink.Name</a>
+
+    } *@
+</section>
