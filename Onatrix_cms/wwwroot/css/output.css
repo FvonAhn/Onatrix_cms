@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-gray-100: #EBEBEB;
     --spacing: 0.25rem;
     --container-7xl: 80rem;
@@ -219,14 +220,53 @@
   .right-3 {
     right: calc(var(--spacing) * 3);
   }
+  .-bottom-\[1px\] {
+    bottom: calc(1px * -1);
+  }
+  .-bottom-\[10px\] {
+    bottom: calc(10px * -1);
+  }
+  .-bottom-\[20px\] {
+    bottom: calc(20px * -1);
+  }
+  .-bottom-\[40px\] {
+    bottom: calc(40px * -1);
+  }
+  .-bottom-\[60px\] {
+    bottom: calc(60px * -1);
+  }
+  .-bottom-\[70px\] {
+    bottom: calc(70px * -1);
+  }
+  .-bottom-\[87px\] {
+    bottom: calc(87px * -1);
+  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
+  }
+  .bottom-\[1px\] {
+    bottom: 1px;
+  }
+  .bottom-\[10px\] {
+    bottom: 10px;
+  }
+  .bottom-\[30px\] {
+    bottom: 30px;
+  }
+  .bottom-\[40px\] {
+    bottom: 40px;
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .left-1\/2 {
+    left: calc(1/2 * 100%);
+  }
   .z-10 {
     z-index: 10;
+  }
+  .z-30 {
+    z-index: 30;
   }
   .z-\[99\] {
     z-index: 99;
@@ -264,6 +304,18 @@
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
+  .mt-\[2rem\] {
+    margin-top: 2rem;
+  }
+  .mt-\[5rem\] {
+    margin-top: 5rem;
+  }
   .mt-\[90px\] {
     margin-top: 90px;
   }
@@ -288,17 +340,20 @@
   .h-\[76px\] {
     height: 76px;
   }
+  .h-\[174px\] {
+    height: 174px;
+  }
   .h-\[220px\] {
     height: 220px;
   }
   .h-\[540px\] {
     height: 540px;
   }
+  .h-\[838px\] {
+    height: 838px;
+  }
   .h-full {
     height: 100%;
-  }
-  .min-h-\[20rem\] {
-    min-height: 20rem;
   }
   .min-h-\[350px\] {
     min-height: 350px;
@@ -333,6 +388,15 @@
   .w-\[161px\] {
     width: 161px;
   }
+  .w-\[190px\] {
+    width: 190px;
+  }
+  .w-\[200px\] {
+    width: 200px;
+  }
+  .w-\[370px\] {
+    width: 370px;
+  }
   .w-\[1170px\] {
     width: 1170px;
   }
@@ -347,6 +411,10 @@
   }
   .flex-shrink-0 {
     flex-shrink: 0;
+  }
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -408,6 +476,24 @@
   .gap-16 {
     gap: calc(var(--spacing) * 16);
   }
+  .gap-\[2rem\] {
+    gap: 2rem;
+  }
+  .gap-\[3rem\] {
+    gap: 3rem;
+  }
+  .gap-\[4rem\] {
+    gap: 4rem;
+  }
+  .gap-\[5rem\] {
+    gap: 5rem;
+  }
+  .gap-\[6rem\] {
+    gap: 6rem;
+  }
+  .gap-\[8rem\] {
+    gap: 8rem;
+  }
   .gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
   }
@@ -416,6 +502,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-visible {
+    overflow: visible;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -449,6 +538,9 @@
   }
   .bg-main {
     background-color: var(--color-main);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
   }
   .bg-white-100 {
     background-color: var(--color-white-100);
@@ -565,11 +657,23 @@
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
+  .text-\[14px\] {
+    font-size: 14px;
+  }
+  .text-\[18px\] {
+    font-size: 18px;
+  }
   .text-\[40px\] {
     font-size: 40px;
   }
   .text-\[70px\] {
     font-size: 70px;
+  }
+  .text-\[90px\] {
+    font-size: 90px;
+  }
+  .text-\[100px\] {
+    font-size: 100px;
   }
   .leading-none {
     --tw-leading: 1;
@@ -707,6 +811,21 @@ body {
 .current a {
   color: var(--color-sub-300);
 }
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -808,6 +927,9 @@ body {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;

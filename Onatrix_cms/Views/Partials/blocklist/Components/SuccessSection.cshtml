@@ -3,3 +3,41 @@
 @{
     var content = (ContentModels.SuccessSection)Model.Content;
 }
+
+<section class="relative overflow-visible">
+    <div class="bg-main relative h-[838px] flex flex-col items-center">
+        <div class="absolute max-w-7xl mx-auto mt-[5rem]">
+            @if (content.SuccessBgImage != null)
+            {
+                <img src="@content.SuccessBgImage.Url()" class="" />
+            }
+        </div>
+        <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center mt-[5rem]">
+                <p class="text-sub-300 text-[14px] font-bold">@content.SuccessTitle</p>
+                <p class="text-white-100 text-[40px] font-bold">@content.SuccessLabel</p>
+            </div>
+            <div class="flex gap-[3rem]">
+                <div class=" w-[370px] flex flex-col items-center">
+                    <h2 class="text-[100px] text-sub-300 font-semibold">689</h2>
+                    <p class="text-[18px] text-white-100 text-center font-semibold">More than 100 customers has been<br />served</p>
+                </div>
+                <div class="w-[370px] flex flex-col items-center">
+                    <h2 class="text-[100px] text-sub-300 font-semibold">370</h2>
+                    <p class="text-[18px] text-white-100 text-center font-semibold">More than 370 projects has been<br />completed</p>
+                </div>
+                <div class="w-[370px] flex flex-col items-center">
+                    <h2 class="text-[100px] text-sub-300 font-semibold">138</h2>
+                    <p class="text-[18px] text-white-100 text-center font-semibold">We are one thirty eight.<br />We are one thirty eight.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (content.SuccessImage != null)
+    {
+        <img src="@content.SuccessImage.Url()" class="absolute left-1/2 transform -translate-x-1/2 bottom-[40px] z-10" />
+    }
+
+    <div class="bg-white-100 h-[174px]"></div>
+</section>
