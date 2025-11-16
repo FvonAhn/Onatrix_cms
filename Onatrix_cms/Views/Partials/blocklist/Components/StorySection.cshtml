@@ -4,33 +4,33 @@
     var content = (ContentModels.StorySection)Model.Content;
 }
 
-<section class="">
-    <div class="max-w-7xl mx-auto relative h-full w-full px-4">
-        <div class="absolute inset-0 -z-10 pointer-events-none">
+<section class="relative flex flex-col items-center overflow-hidden">
+         
+    <div class="absolute">
+        @if (content.StoryBgImage != null)
+        {
+            <img src="@content.StoryBgImage.Url()" class="w-[1170px] h-[540px]" />
+        }
+    </div>
 
-            @if (content.StoryBgImage != null)
-            {
-                <img src="@content.StoryBgImage.Url()" class="w-full h-auto object-cover opacity-90" />
-            }
-            @if (content.StoryImage != null)
-            {
-                <img src="@content.StoryImage.Url()" class="w-full h-auto object-cover opacity-95" />
-            }
 
+    <div class="relative min-h-[932px] z-10 max-w-7xl mx-auto flex flex-col items-center justify-end gap-6">
+        <div class="flex flex-col items-center">
+            <div class="text-[40px] font-extrabold">@content.StoryTitle</div>
+            <h2 class="text-[40px] text-sub-300 font-extrabold">@content.StoryLabel</h2>
         </div>
 
-        <div class="flex flex-col items-center relative z-10 p-20">
-            <div class="rte">@Html.Raw(content.StoryTitle)</div>
-            <h2>
-                @content.StoryLabel
-            </h2>
+        <div class="flex flex-col items-center gap-4">
             <p>@content.StoryText</p>
-
             @if (content.StoryLink != null)
             {
                 <a class="bg-main text-sub-100 py-3 px-10 no-underline rounded cursor-pointer font-bold" href="@content.StoryLink.Url">@content.StoryLink.Name</a>
             }
         </div>
-
+        @if (content.StoryImage != null)
+        {
+            <img src="@content.StoryImage.Url()" class="mt-[90px]" />
+        }
     </div>
+
 </section>

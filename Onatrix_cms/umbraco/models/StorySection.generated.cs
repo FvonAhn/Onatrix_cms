@@ -82,12 +82,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Link StoryLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "storyLink");
 
 		///<summary>
-		/// Story Text
+		/// StoryText
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("storyText")]
-		public virtual string StoryText => this.Value<string>(_publishedValueFallback, "storyText");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString StoryText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "storyText");
 
 		///<summary>
 		/// Story Title
