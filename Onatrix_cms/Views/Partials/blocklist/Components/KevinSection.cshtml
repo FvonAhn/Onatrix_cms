@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.KevinSection)Model.Content;
+}
+
+<section class="bg-gray-100 min-h-[511px]">
+    <div class="flex flex-row">
+
+        <div class="max-w-7xl mx-auto flex flex-col gap-[1.5rem] mt-[3rem]">
+            <p class="text-[14px] text-sub-300 font-bold">@content.KevinTitle</p>
+            <h3 class="text-[40px] text-main font-extrabold">@content.KevinLabel</h3>
+            <p class="max-w-[500px] text-[20px] text-[#999999] italic">@content.KevinText</p>
+            <img src="~/images/five-star-rating.svg" class="w-[95px] h-[14px]"/>
+            <p class="text-[14px] text-[#2D303A] font-normal">Kevin Gardner</p>
+            <p class="text-[20px] text-[#2D303A] Italic">Swebank</p>
+        </div>
+
+        <div>
+            @if (@content.KevinImage != null)
+            {
+                <img src="@content.KevinImage.Url()" class="min-h-[511px]" />
+            }
+        </div>
+
+    </div>
+</section>

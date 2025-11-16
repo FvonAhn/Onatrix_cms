@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TinaFoxSection)Model.Content;
+}
+
+<section class="bg-white-100 py-10">
+    <div class="max-w-7xl mx-auto flex flex-row justify-center gap-6 min-h-[610px] min-w-[1174px]">
+
+        <div>
+            <div>
+                @if (content.TinaFoxImage != null)
+                {
+                    <img src="@content.TinaFoxImage.Url()" class="h-[571px] w-[400px]" />
+                }
+            </div>
+            <p>@content.TinaFoxImageText</p>
+        </div>
+
+        <div class="w-[550px] flex flex-col gap-2">
+            <p class="text-[20px] text-note light-italic">@content.TinaFoxIngress</p>
+            <p class="text-[14px] text-note font-normal">@content.TinaFoxText</p>
+        </div>
+
+    </div>
+</section>
